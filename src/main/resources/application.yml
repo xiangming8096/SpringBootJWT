@@ -1,0 +1,28 @@
+# jdbc连接池
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lt
+    username: root
+    password: root
+
+# mybatis配置
+mybatis:
+# 实体类别名包路径
+  type-aliases-package: com.lt.web.domain
+  # 映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 控制台输出执行sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# 配置日志级别
+logging:
+  level:
+    com.lt: debug
+    org.springframework: info
+
+# 修改映射端口
+server:
+  port: 80
